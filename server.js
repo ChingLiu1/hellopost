@@ -1,13 +1,16 @@
-const app = require('express')(),
+const express = require('express'),
       port = process.env.PORT || 3000,
-      webroutes = require('./routes/content'),
-      adminroutes = require('./routes/admin'),
-      hbs = require('hbs');
-//routes middleware
-app.use(webroutes);
-app.use('/admin', adminroutes);
+      app = express(),
+      contentRoute = require('./routes/content');
+      adminroutes = require('./routes/admin');
 
-//app.use('view engine', 'hbs');
+//routes middleware
+app.use(contentRoute);
+app.use('/admin', adminroutes);
+app.set('view engine', 'hbs');
+app.use(express.static('public'));
+
+
 app.listen(port, () => {
   console.log('locally listenning');
 });
