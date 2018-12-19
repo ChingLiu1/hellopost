@@ -18,6 +18,10 @@
   background-color: rgb(248, 249, 250);
 }
 
+/* agents */
+#agents{
+      background-color: rgb(223, 255, 223);
+}
 .card-list .badge {
     left: 20px;
     padding: 7px 10px;
